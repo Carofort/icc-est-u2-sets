@@ -22,42 +22,29 @@ public class Contacto {
     public String getTelefono() {
         return telefono;
     }
-
+    
     @Override
     public String toString() {
-        return "Contacto [toString()=" + super.toString() + "]";
+        return nombre + " " + apellido + " - " + telefono;
     }
 
     @Override
     public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-        result = prime * result + ((apellido == null) ? 0 : apellido.hashCode());
-        return result;
+        // Por simplicidad, combinamos los hash de nombre y apellido
+        return nombre.hashCode() + apellido.hashCode();
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj) // referencias de memoria
             return true;
-        if (obj == null)
+        if (obj == null) 
             return false;
         if (getClass() != obj.getClass())
             return false;
+
         Contacto other = (Contacto) obj;
-        if (nombre == null) {
-            if (other.nombre != null)
-                return false;
-        } else if (!nombre.equals(other.nombre))
-            return false;
-        if (apellido == null) {
-            if (other.apellido != null)
-                return false;
-        } else if (!apellido.equals(other.apellido))
-            return false;
-        return true;
+        return nombre.equals(other.nombre)
+                && apellido.equals(other.apellido);
     }
-
-
 }

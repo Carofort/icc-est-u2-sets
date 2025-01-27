@@ -10,6 +10,7 @@ public class App {
         runLinkedHashSet();
         runTreeSet();
         runTreeSetConComparador();
+        runEjercicio();
     }
 
     public static void runHashSet(){
@@ -52,9 +53,42 @@ public class App {
         }
     }
 
-    /*
-    private static runEjericio(){
-        Set<Contacto> agenda = new TreeSet<>(ContactoComparator());
 
-    } */      
+    private static void runEjercicio(){
+        Set<Contacto> agenda = new TreeSet<>(new ContactoComparator());
+        System.out.println("----- Ejercicio ------");
+
+        agenda.add(new Contacto("Pedro", "Lopez", "222222222"));
+        agenda.add(new Contacto("Luis", "Perez", "111111111"));
+        agenda.add(new Contacto("Ana", "Perez", "987654321"));
+        agenda.add(new Contacto("Pedro", "Lopez", "123456789"));
+
+        for (Contacto c : agenda){
+            System.out.println(c);
+        }
+        
+        /* 
+        Contacto c1 = new Contacto("Pedro", "López", "123456789");
+        Contacto c2 = new Contacto("Pedro", "López", "123456789");
+        System.out.println(c1);
+        System.out.println(c2);
+
+        System.out.println("*Referencia en memoria*");
+        boolean comparacionReferencia = c1 == c2;
+        System.out.println(comparacionReferencia);
+        System.out.println("c1: " + c1 + " == c2: " + c2 + " = " + comparacionReferencia);
+
+        System.out.println("*Comparacion con equals*");
+        System.out.println(c1.equals(c2));
+        boolean comparacionEquals = c1.equals(c2);
+        System.out.println(comparacionEquals);
+        System.out.println("c1: " + c1 + " == c2: " + c2 + " = " + comparacionEquals);
+
+        System.out.println("*Comparación HashCode*");
+        boolean comparacionHashCode = c1.hashCode() == c2.hashCode();
+        System.out.println(comparacionHashCode);
+        System.out.println("c1: " + c1.hashCode() + " == c2: " + c2.hashCode() + " = " + comparacionHashCode);
+        */
+
+    }     
 }

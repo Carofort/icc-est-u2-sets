@@ -44,7 +44,7 @@ public class Sets {
             @Override
             public int compare(String s1, String s2){
                 int resultado = Integer.compare(s1.length(), s2.length());
-                if(resultado == 0 ){
+                if( resultado == 0 ){
                     resultado = s1.compareTo(s2);
                 }
                 return resultado;
